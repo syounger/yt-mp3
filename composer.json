@@ -1,0 +1,13 @@
+{
+    "name": "syounger/yt-mp3",
+    "description": "Basic Youtube-to-mp3 API demo",
+    "require": {
+        "mikecao/flight": "^1.3"
+    },
+    "authors": [
+        {
+            "name": "Simcha Younger",
+            "email": "simcha.younger@gmail.com"
+        }
+    ]
+}

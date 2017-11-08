@@ -1,0 +1,9 @@
+#Youtube-to-mp3
+
+This is a small project to demonstrate an API which will recieve a youtube url or video id, create an mp3 from the video, and return a url to download the mp3.
+
+## API
+
+GET /api/youtube2mp3
+Params: url={video url or id}
+Return: {video_id: id, url: mp3 url}
