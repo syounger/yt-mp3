@@ -22,10 +22,11 @@ class Video{
 	 */	
 	public function createMP3(){
 		$mp3 = str_replace('mp4', 'mp3', $this->name);
-		$mp3_path = $this->audio_dir.DIRECTORY_SEPARATOR.$mp3;
+		$mp3 = substr($this->name, 0, -3).'mp3';
+		$mp3_path = self::$audio_dir.DIRECTORY_SEPARATOR.$mp3;
 		`ffmpeg -i {$this->path} {$mp3_path}`;
 		if(!file_exists($mp3_path)) throw new Exception('failed to generate mp3 file');
-		return $mp3_path;
+		return $mp3;
 	}
 
 
