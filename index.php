@@ -26,7 +26,7 @@ Flight::route("GET /api/youtube2mp3", function(){
 		$yt = new yt_downloader(Flight::request()->query->url, true);
 		$video = new Video($yt->video);
 		$mp3 = $video->createMP3();
-		Flight::json(["video_id" => $yt->videoID, "url" => $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/api/mp3/'.$mp3]);
+		Flight::json(["video_id" => $yt->videoID, "url" => 'http://'.$_SERVER['HTTP_HOST'].'/api/mp3/'.$mp3]);
 	}catch(Exception $e){
 				//throw $e;
 		Flight::notFound();
