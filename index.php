@@ -25,7 +25,7 @@ Flight::route("GET /api/youtube2mp3", function(){
 	try{
 		$yt = new yt_downloader(Flight::request()->query->url, true);
 		$video = new Video($yt->video);
-		$mp3 = $yt->createMP3();
+		$mp3 = $video->createMP3();
 		Flight::json(["video_id" => $yt->id, "url" => '/api/mp3/'.$mp3]);
 	}catch(Exception $e){
 throw $e;
